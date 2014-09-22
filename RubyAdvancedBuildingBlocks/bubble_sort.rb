@@ -1,15 +1,15 @@
 def bubble_sort(array)
   new_array = array.clone
   loop do
-  	  x, switcheroos = 0, 0
-	  while x < (new_array.size - 1) do
-	  	if new_array[x] > new_array[x+1]
-	  		new_array[x], new_array[x+1] = new_array[x+1], new_array[x]
-	  	    switcheroos += 1
-	  	end
-	  	x += 1
-	  end
-	  break if switcheroos == 0
+    x, switcheroos = 0, 0
+    while x < (new_array.size - 1) do
+      if new_array[x] > new_array[x+1]
+        new_array[x], new_array[x+1] = new_array[x+1], new_array[x]
+          switcheroos += 1
+      end
+      x += 1
+    end
+    break if switcheroos == 0
   end
   new_array
 end
@@ -22,15 +22,15 @@ p bubble_sort(array)
 def bubble_sort_by(array, &proc)
   new_array = array.clone
   loop do
-   	  x, switcheroos = 0, 0
-	  while x < (new_array.size - 1) do
-	  	if proc.call(new_array[x], new_array[x+1]) < 0
-	  		new_array[x], new_array[x+1] = new_array[x+1], new_array[x]
-	  	    switcheroos += 1
-	  	end
-	  	x += 1
-	  end
-	  break if switcheroos == 0 	
+    x, switcheroos = 0, 0
+    while x < (new_array.size - 1) do
+      if proc.call(new_array[x], new_array[x+1]) < 0
+        new_array[x], new_array[x+1] = new_array[x+1], new_array[x]
+        switcheroos += 1
+      end
+      x += 1
+    end
+    break if switcheroos == 0 	
   end
   new_array
 end

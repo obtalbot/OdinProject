@@ -3,21 +3,21 @@ def stock_picker(price_list)
   max, min = 0, 0
 
   loop do
-    break if prices.empty?
+  	break if prices.empty?
   	
     prices.untaint
 
-    if prices[0] == prices.max 
-      prices.shift
+  	if prices[0] == prices.max 
+  	  prices.shift
       prices.taint
     end
 
     if prices[prices.size] == prices.min
-      prices.pop
-      prices.taint
-    end
+  	  prices.pop
+  	  prices.taint
+  	end
 
-    break unless prices.tainted?
+  	break unless prices.tainted?
   end
 
   unless prices.empty?

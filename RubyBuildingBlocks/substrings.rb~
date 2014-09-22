@@ -4,7 +4,7 @@ def substrings(string, dictionary)
   
   dictionary.each do |x|
     words.each do |y|
-      words_found[x] += 1 if y.include?(x.downcase)
+    	words_found[x] += 1 if y.include?(x.downcase)
     end
   end
 
