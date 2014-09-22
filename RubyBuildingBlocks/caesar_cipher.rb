@@ -1,5 +1,5 @@
 def caesar_cipher(message, shift_factor)
-	alphabet = [*("a".."z")]
+alphabet = [*("a".."z")]
 	new_message = ""
 
     message.each_char do |char|
