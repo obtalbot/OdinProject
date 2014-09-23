@@ -7,7 +7,7 @@ module Enumerable
       result << self[index]
       yield(self[index])
     end
-    return result
+    result
   end #my_each
 
   def my_each_with_index
@@ -17,7 +17,7 @@ module Enumerable
       result << self[index]
       yield self[index], index
     end 
-    return result
+    result
   end #my_each_with_index
 
   def my_select
@@ -28,7 +28,7 @@ module Enumerable
         result << self[index]
       end
     end     
-    return result
+    result
   end #my_select
 
   def my_all? 
@@ -72,7 +72,7 @@ module Enumerable
         counter += 1
       end
     end     
-    return counter
+    counter
   end #my_count
 
   def my_map
@@ -81,7 +81,7 @@ module Enumerable
     self.my_each_with_index do |item, index|
       result << yield(self[index])
     end  
-    return result
+    result
   end #my_map1
 
   def my_map(&proc) # takes a proc instead
@@ -90,7 +90,7 @@ module Enumerable
     self.my_each_with_index do |item, index|
       result << proc.call(self[index])
     end     
-    return result    
+    result    
   end #my_map2
 
   def my_inject(arg1=nil, arg2=nil)
@@ -115,7 +115,7 @@ module Enumerable
         memo = memo.send(sym, self[x])
       end
     end
-    return memo
+    memo
   end #my_inject
 end 
 
