@@ -70,13 +70,14 @@ class Player
   end
 
   def win?
-    win = false
+    status = false
     Game::WINNING_MOVES.each do |combo|
       if combo.to_set.subset? @moves.to_set then
-        win = true
+        status = true
       end
     end
-    win
+    
+    status
   end
 end
 
