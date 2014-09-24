@@ -93,7 +93,6 @@ class Game
     @board = Board.new
   end
 
-
   def play
     @board.display_board
 
