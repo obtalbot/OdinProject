@@ -76,7 +76,6 @@ class Player
         status = true
       end
     end
-    
     status
   end
 end
