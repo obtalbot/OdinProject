@@ -15,7 +15,7 @@ class Board
   end
 
   def set_cell(number, symbol)
-    if Game::VALID_MOVES.include?(number) && !@occupied_cells.include?(number) && 
+    if Game::VALID_MOVES.include?(number) && !@occupied_cells.include?(number)
       cell = get_cell_mapping(number)
       @grid[cell[0]][cell[1]] = symbol
       @occupied_cells << number
