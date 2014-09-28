@@ -127,7 +127,7 @@ class Game
       board.rate_guess(player.guess)
       board.display_guess(player.guess, num)
       board.display_rating(player.guess)
-      break if player.guess.rating == ["+","+","+","+"]
+      break if player.guess.rating.join == "++++"
     end
 
     board.display_secret_code
