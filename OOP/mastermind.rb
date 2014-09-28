@@ -72,13 +72,14 @@ class Board
 
   def map_color(letter)
     # return colored circle for letter
+    dot = "\u2b24"
     case letter
-      when 'R' then "\u2b24".red
-      when 'O' then "\u2b24".orange
-      when 'Y' then "\u2b24".brown
-      when 'G' then "\u2b24".green
-      when 'B' then "\u2b24".blue
-      when 'V' then "\u2b24".magenta
+      when 'R' then dot.red
+      when 'O' then dot.orange
+      when 'Y' then dot.brown
+      when 'G' then dot.green
+      when 'B' then dot.blue
+      when 'V' then dot.magenta
     end
   end
 end
@@ -99,7 +100,7 @@ class Guess
     @rating = []
   end
 
-  def valid?
+  def is_valid?
     result = true
     result = false if @code.size != 4
     @code.each do |x|
@@ -134,7 +135,7 @@ class Game
 
   def get_guess(player)
     player.guess.clear
-    until player.guess.valid? do
+    until player.guess.is_valid? do
       print "   > "
       player.guess.code = gets.chomp.upcase.split(//)
     end
@@ -145,8 +146,8 @@ class Game
     puts "A secret code of 4 colors has been generated."
     puts "Valid colors are R,O,Y,G,B,V."
     puts "You have 12 chances to guess what it is."
-    puts "(+) means a correct color at the correct spot."
-    puts "(-) means a correct color at the wrong spot."
+    puts "(+) means there's a correct color at the correct spot."
+    puts "(-) means there's a correct color at the wrong spot."
     puts "Enter your guess. (example: yorg)"
   end
 end
@@ -164,4 +165,4 @@ while continue do
   end
   continue = false if answer == 'n'
 end
-puts "Bye."
+puts "Bye.\n"
