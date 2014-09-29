@@ -56,7 +56,7 @@ class Player
   def make_move(board)
     valid_move_made = false
     until valid_move_made do
-      print "#{self.name}'s move => "
+      print "#{self.name}'s move [#{symbol}] => "
       move = gets.chomp.to_i
 
       if board.set_cell(move,@symbol)
