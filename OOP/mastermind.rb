@@ -142,12 +142,12 @@ class Game
   end
 
   def print_instructions
-    puts "\nWelcome to MasterMind!"
+    puts "\nWelcome to MasterMind!".brown
     puts "A secret code of 4 colors has been generated."
     puts "Valid colors are R,O,Y,G,B,V."
     puts "You have 12 chances to guess what it is."
-    puts "(+) means there's a correct color at the correct spot."
-    puts "(-) means there's a correct color at the wrong spot."
+    puts "(+) means there's a correct color at the correct spot.".green
+    puts "(-) means there's a correct color at the wrong spot.".green
     puts "Enter your guess. (example: yorg)"
   end
 end
