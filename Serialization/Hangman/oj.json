@@ -1,0 +1,9 @@
+--- !ruby/object:Game
+player: !ruby/object:Player
+  name: oj
+  guess: _I_E_TIT__E
+  stat: XXX
+  used: AON
+  mistakes: 3
+secret: !ruby/object:Secret
+  word: DIVESTITURE
